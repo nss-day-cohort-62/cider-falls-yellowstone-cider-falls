@@ -1,5 +1,3 @@
-
-
 const database = {
     services: [
         { id: 1, serviceName: "Rafting"},
