@@ -1,123 +1,101 @@
 
 
 const database = {
-    Services: [
-        { id: 1, name: },
-        { id: 2, name: 8},
-        { id: 3, name: 5},
-        { id: 4, name: 9},
-        { id: 5, name: 2},
-        { id: 6, name: 4},
-        { id: 7, name: 1},
-        { id: 8, name: 7},
-        { id: 9, name: 3},
-        { id: 10, name: 6},
-        { id: 11, name: 6},
-        { id: 12, name: 9},
-        { id: 13, name: 5},
-        { id: 14, name: 10},
+    services: [
+        { id: 1, serviceName: "Rafting"},
+        { id: 2, serviceName: "Canoeing"},
+        { id: 3, serviceName: "Fishing"},//fishing is in 2
+        { id: 4, serviceName: "Hiking"}, //hiking is in 3 areas
+        { id: 5, serviceName: "Picknicking"},//picknicking is in 3
+        { id: 6, serviceName: "Rock Climbing"},
+        { id: 7, serviceName: "Lodging"},//lodging is in 2
+        { id: 8, serviceName: "Parking"},//parking is in 2
+        { id: 9, serviceName: "Information"},//info is in 2
+        { id: 10, serviceName: "Zipline"},
     ],
-    parkArea: [
-        { id: 1, name: "Pittsburgh"},
-        { id: 2, name: "Minneapolis"},
-        { id: 3, name: "Phoenix"},
-        { id: 4, name: "Tucson"},
-        { id: 5, name: "Denver"},
-        { id: 6, name: "Boise"},
-        { id: 7, name: "San Diego"},
-        { id: 8, name: "Sarasota"},
-        { id: 9, name: "White Plains"},
-        { id: 10, name: "Chicago"}
+    parkAreas: [
+        { id: 1, areaName: "Champfort River"},
+        { id: 2, areaName: "Lost Wolf Hiking Trail"},
+        { id: 3, areaName: "Lodge"},
+        { id: 4, areaName: "Gander River"},
+        { id: 5, areaName: "Campgrounds"},
+        { id: 6, areaName: "Pine Bluffs Trails"},
     ],
-    Guest: [{
+
+    guests: [{
         id: 1,
-        name: "Alphonse Meron",
-        email: "ameron0@mashable.com",
-        
+        name: "Julia Degnan",
+        parkAreaId: 3, 
     }, {
         id: 2,
-        name: "Damara Pentecust",
-        email: "dpentecust1@apache.org",
-        
+        name: "Nick Adams",
+        parkAreaId: 2,
     }, {
         id: 3,
-        name: "Anna Bowton",
-        email: "abowton2@wisc.edu",
-        
+        name: "Ely Dorado",
+        parkAreaId: 4, 
     }, {
         id: 4,
-        name: "Hunfredo Drynan",
-        email: "hdrynan3@bizjournals.com",
-       
-    }, {
-        id: 5,
-        name: "Elmira Bick",
-        email: "ebick4@biblegateway.com",
-    }, {
-        id: 6,
-        name: "Bernie Dreger",
-        email: "bdreger5@zimbio.com",
-    }, {
-        id: 7,
-        name: "Rolando Gault",
-        email: "rgault6@google.com",
-    }, {
-        id: 8,
-        name: "Tiffanie Tubby",
-        email: "ttubby7@intel.com",
-    }, {
-        id: 9,
-        name: "Tomlin Cutill",
-        email: "tcutill8@marketwatch.com",
-    }, {
-        id: 10, //PK
-        name: "Arv Biddle",
-        email: "abiddle9@cafepress.com",
+        name: "Frankie Bruno",
+        parkAreaId: 5, 
     }],
-    parkAreaServices: [{
-        id: 1, //primary key
-        name: "Dianemarie Hartness",
-        walkerId: 3, //foreign key
-       
+
+    areaServices: [{
+    }, {
+        id: 1,
+        serviceId: 1,
+        parkAreaId: 1
     }, {
         id: 2,
-        name: "Christoph Fosdyke",
-        walkerId: 10
+        serviceId: 2,
+        parkAreaId: 1
     }, {
         id: 3,
-        name: "Rocket",
-        walkerId: 7
+        serviceId: 3,
+        parkAreaId: [1, 4]
     }, {
         id: 4,
-        name: "Ebony",
-        walkerId: 3
+        serviceId: 4,
+        parkAreaId: [2, 4, 6]
     }, {
         id: 5,
-        name: "Scotty",
-        walkerId: 8
+        serviceId: 5,
+        parkAreaId: [2, 3, 6]
     }, {
         id: 6,
-        name: "Mac",
-        walkerId: 2
+        serviceId: 6,
+        parkAreaId: 2
     }, {
         id: 7,
-        name: "Oreo",
-        walkerId: 5
+        serviceId: 7,
+        parkAreaId: [3, 5]
     }, {
         id: 8,
-        name: "Sassy",
-        walkerId: 1
+        serviceId: 8,
+        parkAreaId: [3, 5]
     }, {
         id: 9,
-        name: "Salem",
-        walkerId: 9,
-        cityId: 2 
-    }, {
-        id: 10,
-        name: "Panda",
-        walkerId: 7,
-        cityId: 1
-    }]
+        serviceId: 9,
+        parkAreaId: [3, 5]
+    },{
+        id: 10, 
+        serviceId: 10,
+        parkAreaId: 6
+}],
 }
 
-export .map
+export const getServices = () => {
+    return database.services.map(service => ({...service}))
+}
+
+export const getParkAreas = () => {
+    return database.parkAreas.map(parkArea => ({...parkArea}))
+}
+
+export const getGuests = () => {
+    return database.guests.map(guest => ({...guest}))
+}
+
+export const getAreaServices = () => {
+        return database.areaServices.map(areaService => ({...areaService}))
+}
