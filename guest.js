@@ -3,7 +3,7 @@ import { getGuests } from "./database.js"
 const guests = getGuests()
 
 //Export a function that creates a list of guests html 
-export const guestsHTML = () => {
+export const createGuestHTML = () => {
     guestsHTML = "<ul>"
 
     for (const guest of guests){

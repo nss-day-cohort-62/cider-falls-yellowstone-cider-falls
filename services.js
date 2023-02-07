@@ -1,5 +1,16 @@
-//TODO Import services data from database.js
-//TODO Store return in variable
-//TODO Create and export function that returns servicesHTML list 
-//TODO Iterate through services array
-//TODO Return servicesHTML
+import { getServices } from "./database";
+
+const services = getServices()
+
+export const createServiceListHTML = () => {
+    let serviceHTML = "<ul>"
+
+    for (const service of services) {
+        serviceHTML += `<li id="service--${service.id}>${service.serviceName}</li>`
+    }
+
+    serviceHTML += "</ul>"
+
+    return serviceHTML
+}
+
