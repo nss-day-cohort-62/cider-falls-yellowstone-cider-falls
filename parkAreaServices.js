@@ -6,6 +6,7 @@ const parkAreas = getParkAreas();
 const justServices = getServices();
 const parkServices = getAreaServices();
 
+
 //function that returns the offered services with the park area//
 //if serviceId equals the service.id then
 //use array.isarray method to check if the parkAreaId is an array then return the array//
