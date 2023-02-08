@@ -1,11 +1,10 @@
 import { createServiceListHTML } from "./services.js"
 import { createParkAreaHTML } from "./parkArea.js"
 import { createGuestHTML } from "./guest.js"
-import { createParkAreaServiceHTML } from "./parkAreaServices.js"
-
+import { parkServiceMatch } from "./parkAreaServices.js"
 
 const applicationHTML = `
-<img src="ciderlogo.jpg"></img>
+<img class="image" src="ciderlogo.jpg"></img>
 <h1>Cider Falls</h1>
 <article class="services">
     <section class="services--column list Services">
@@ -24,7 +23,7 @@ const applicationHTML = `
 
 <article class="areaServices">
     <h2>Park Area Services</h2>
-        ${createParkAreaServiceHTML()}
+        ${parkServiceMatch()}
 </article>
 `
 
