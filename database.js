@@ -137,11 +137,11 @@ const database = {
       parkAreaId: 6,
 
     },
-{
-    id:18,
-    serviceId: 6,
-    parkAreaId: 2
-},
+    {
+      id:18,
+      serviceId: 6,
+      parkAreaId: 2
+    },
   ],
 };
 
