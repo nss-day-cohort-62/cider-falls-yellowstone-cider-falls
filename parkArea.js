@@ -1,13 +1,46 @@
-import { getParkAreas } from "./database.js"
+import { getParkAreas } from "./database.js";
+import { getGuests } from "./database.js";
 
-const parkAreas = getParkAreas()
+const parkAreas = getParkAreas();
+const guests = getGuests();
 
-export const createParkAreaHTML = () =>{
-    let html = "<ul>"
+const guestCount = (areaId) => {
+  let guestNumber = [];
 
-    for (const area of parkAreas){
-        html += `<li id="area--${area.id}">${area.areaName}</li>`
+  for (const guest of guests) {
+    if (guest.parkAreaId === areaId) {
+      guestNumber.push(guest);
     }
-    html += "</ul>"
-    return html
-}
+  }
+  return guestNumber;
+};
+
+//Add a click event that displays number of park guests when a park area is clicked
+
+//Create Click Event
+document.addEventListener("click", (clickEvent) => {
+  const itemClicked = clickEvent.target;
+  if (itemClicked.id.startsWith("area")) {
+    const [, areaId] = itemClicked.id.split("--");
+
+    for (const area of parkAreas) {
+      if (area.id === parseInt(areaId)) {
+        const guestCounter = guestCount(parseInt(areaId));
+        const guestLength = guestCounter.length;
+
+        //This area currently has {number} of guests
+        window.alert(` ${guestLength} guest are in this area`);
+      }
+    }
+  }
+});
+
+export const createParkAreaHTML = () => {
+  let html = "<ul>";
+
+  for (const area of parkAreas) {
+    html += `<li id="area--${area.id}">${area.areaName}</li>`;
+  }
+  html += "</ul>";
+  return html;
+};
