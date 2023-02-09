@@ -3,6 +3,8 @@ import { createParkAreaHTML } from "./parkArea.js"
 import { createGuestHTML } from "./guest.js"
 import { parkServiceMatch } from "./parkAreaServices.js"
 
+// change article structure later
+
 const applicationHTML = `
 <img class="image" src="ciderlogo.jpg"></img>
 <h1>Cider Falls</h1>

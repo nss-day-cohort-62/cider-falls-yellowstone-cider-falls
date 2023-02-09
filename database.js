@@ -2,13 +2,13 @@ const database = {
   services: [
     { id: 1, serviceName: "Rafting" },
     { id: 2, serviceName: "Canoeing" },
-    { id: 3, serviceName: "Fishing" }, //fishing is in 2
-    { id: 4, serviceName: "Hiking" }, //hiking is in 3 areas
-    { id: 5, serviceName: "Picknicking" }, //picknicking is in 3
+    { id: 3, serviceName: "Fishing" },
+    { id: 4, serviceName: "Hiking" }, 
+    { id: 5, serviceName: "Picknicking" }, 
     { id: 6, serviceName: "Rock Climbing" },
-    { id: 7, serviceName: "Lodging" }, //lodging is in 2
-    { id: 8, serviceName: "Parking" }, //parking is in 2
-    { id: 9, serviceName: "Information" }, //info is in 2
+    { id: 7, serviceName: "Lodging" }, 
+    { id: 8, serviceName: "Parking" }, 
+    { id: 9, serviceName: "Information" }, 
     { id: 10, serviceName: "Zipline" },
   ],
   parkAreas: [
