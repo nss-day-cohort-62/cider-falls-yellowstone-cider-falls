@@ -36,7 +36,7 @@ document.addEventListener("click", (clickEvent) => {
 });
 
 export const createParkAreaHTML = () => {
-  let html = "<ul>";
+  let html = `<ul class="areas">`;
 
   for (const area of parkAreas) {
     html += `<li id="area--${area.id}">${area.areaName}</li>`;

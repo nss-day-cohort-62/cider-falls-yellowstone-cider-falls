@@ -66,7 +66,7 @@ document.addEventListener("click", (clickEvent) => {
 // might muddle the data ; make things more confusing
 
 export const createServiceListHTML = () => {
-    let serviceHTML = "<ul>"
+    let serviceHTML = `<ul class="service--list">`
 
     for (const service of services) {
         serviceHTML += `<li id="service--${service.id}">${service.serviceName}</li>`
